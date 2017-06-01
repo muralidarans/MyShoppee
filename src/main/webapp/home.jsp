@@ -22,6 +22,7 @@
 <%@ include file="WEB-INF/pages/header.jsp" %>
 <!--<jsp:include page="WEB-INF/pages/header.html"></jsp:include> -->
 <h2>Welcome to MyShoppee World</h2>
+<img src="image/formal.jpg" alt="test" />
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->

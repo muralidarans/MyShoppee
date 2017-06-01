@@ -10,6 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 
+
   
   <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -38,10 +39,23 @@
     <ul class="nav navbar-nav">
     <url:url value="/" var="homeUrl"></url:url>
       <li class="active"><a href="${homeUrl}">HOME</a></li> 
-  	<url:url value="/admin/product/productform" var="addUrl"></url:url>
+       <url:url value="/Aboutus" var="url"></url:url>
+   <li><a href="${url }">ABOUT US</a></li>
+   <url:url value="/admin/product/productform" var="addUrl"></url:url>
       <li><a href="${addUrl}">ADD PRODUCT</a></li>
       <url:url value="/all/product/productlist" var="viewUrl"></url:url>
       <li><a href="${viewUrl}">VIEW ALL PRODUCTS</a></li>
+      <li class="dropdown">
+			<a href="" class="dropdown-toggle" data-toggle="dropdown">
+                     Select by Category<b class="caret"></b></a>
+			<ul class="dropdown-menu">
+			<c:forEach var="c" items="${categories }">
+			<li>
+<a href="<c:url value="/all/product/productsByCategory?searchCondition=${c.categoryDetails }"></c:url>" >
+  ${c.categoryDetails }</a></li>
+			</c:forEach>
+			</ul>
+			</li>
       <li><a href="#">LOGIN/SIGN UP</a></li>
     </ul>
   </div>

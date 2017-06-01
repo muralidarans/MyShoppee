@@ -2,6 +2,8 @@ package com.murali.dao;
 
 import java.util.ArrayList;
 
+import org.hibernate.engine.jdbc.LobCreator;
+
 import com.murali.model.Product;
 
 public interface ProductDao {
@@ -9,6 +11,7 @@ public interface ProductDao {
 	ArrayList<Product> viewAllProducts();
 	void deleteProduct(int productID);
 	Product getProductById(int productId);
-
+	void saveOrUpdateProduct(Product product);
+	 LobCreator getLobCreator();
 
 }

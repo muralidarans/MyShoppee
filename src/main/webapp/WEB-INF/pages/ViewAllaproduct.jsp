@@ -10,37 +10,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>My Shoppee View All Products</title>
-
+<script>
+$(document).ready(function() {
+var searchCondition = '${searchCondition}';
+$('.table').DataTable({
+"lengthMenu" : [ [ 3, 5, 7, -1 ], [ 3, 5, 7, "All" ] ],
+"oSearch" : {
+"sSearch" : searchCondition
+}
+})
+});
+</script>
   
 </head>
 <body>
 <%@ include file="header.jsp" %> 
-<div class="container-wrapper">
-<div class="container">
-	<table >
-		<tr>
-			<th>Product Name</th><th>Price</th><th>Manufacturer</th><th>Action</th>
-		</tr>
+
+<table class="table table-striped" border="1">
+<thead>
+<tr>
+<th>Image</th>
+<th>Product Name</th>
+<th>Price</th>
+<th>Category</th>
+<th colspan="3">Action</th>
 
 		<c:forEach items="${productList}" var="product" >
 		<tr>
-			<url:url value="/resources/images/${product.prodcutID}.png" var="url"></url:url>			
+						
 			
-			<td><img src="${url}" height="50" width="50" ></td>
+			<url:url value="data:image/jpeg;base64,${product.encodedImageString}" var="imageurl"></url:url>
+			<td><img src="${imageurl}" height="50" width="50" ></td>
 			<td>${product.productName}</td>
 			<td>${product.price }</td>
 			<td>${product.manufacturer }</td>
 			
 			<url:url value="viewProduct/${product.prodcutID}" var="url1"></url:url>
 			
-			<td><a href="${url1}"><span class="glyphicon glyphicon-info-sign"></span></a></td>
+			<td><a href="${url1}"><span class="glyphicon glyphicon-info-sign"></span></a>
 
-			<url:url value="editproduct/${product.prodcutID}" var="url2"></url:url>
-			<td><a href="${url2}"><span class="glyphicon glyphicon-pencil"></span></a>
+			<url:url value="/admin/product/editproduct/${product.prodcutID}" var="url2"></url:url>
+			<a href="${url2}"><span class="glyphicon glyphicon-pencil"></span></a>
 
 
 			<url:url value="deleteproduct/${product.prodcutID}" var="value1"></url:url>
-			<td>  <a href="${value1}"><span class="glyphicon glyphicon-trash"></span></a></td>		
+			  <a href="${value1}"><span class="glyphicon glyphicon-trash"></span></a></td>		
 		</tr>
 
 </c:forEach>

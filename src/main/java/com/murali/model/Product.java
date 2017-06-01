@@ -1,11 +1,14 @@
 package com.murali.model;
 
+import java.sql.Blob;
+
 import javax.management.remote.TargetedNotification;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 import javax.validation.constraints.Min;
@@ -33,7 +36,38 @@ public class Product {
 	private Category category;
 	@Transient
 	private MultipartFile image;
+	@Lob
+	private Blob imageContent;
+	private String fileName;
+	private String contentType;
+	@Transient
+	private String encodedImageString;
 	
+	
+	public String getEncodedImageString() {
+		return encodedImageString;
+	}
+	public void setEncodedImageString(String encodedImageString) {
+		this.encodedImageString = encodedImageString;
+	}
+	public Blob getImageContent() {
+		return imageContent;
+	}
+	public void setImageContent(Blob imageContent) {
+		this.imageContent = imageContent;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getContentType() {
+		return contentType;
+	}
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
+	}
 	public MultipartFile getImage() {
 		return image;
 	}

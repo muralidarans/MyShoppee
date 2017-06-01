@@ -2,6 +2,7 @@ package com.murali.service;
 
 import java.util.ArrayList;
 
+import org.hibernate.engine.jdbc.LobCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,17 @@ import com.murali.model.Product;
 public class ProductServiceImpl implements Productservice {
 	@Autowired
 	private ProductDao productDao;
+	
+	public void saveOrUpdateProduct(Product product) {
+		   productDao.saveOrUpdateProduct(product);
+			
+		}
 	public void addproduct(Product product) {
 		   productDao.addProduct(product);
 			
 		}
 	
 	 public ArrayList<Product> viewAllProducts() {
-		// TODO Auto-generated method stub
 		ArrayList<Product> list= productDao.viewAllProducts();
 		return list;
 	}
@@ -28,6 +33,9 @@ public class ProductServiceImpl implements Productservice {
 		 Product product = productDao.getProductById(productId);
 		 return product;
 
+	 }
+	 public LobCreator getLobCreator(){
+		 return productDao.getLobCreator();
 	 }
 
 

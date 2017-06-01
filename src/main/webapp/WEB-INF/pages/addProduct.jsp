@@ -17,7 +17,7 @@
 <div class="container-wrapper">
 <div class="container">
 <url:url var="url1" value="/admin/product/addProduct"></url:url>
-<form:form action="${url1}" modelAttribute="productObj" method="post">
+<form:form action="${url1}" modelAttribute="productObj" method="post" enctype="multipart/form-data">
 
 <div class="form-group">
 <label for="productID"></label>
@@ -66,6 +66,11 @@
 
 </c:forEach>
 <form:errors path="category" cssStyle="color:red"></form:errors>
+</div>
+
+<div class="form-group">
+<label for="image">Upload Image</label>
+<input type="file" name="image" >
 </div>
 
 

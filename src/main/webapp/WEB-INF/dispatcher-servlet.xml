@@ -22,7 +22,7 @@
 <property name="maxUploadSize" value="1024000"></property>
 
 </bean>
-	
+	<mvc:resources location="/WEB-INF/resources/" mapping="/resources/**"></mvc:resources>     
 
 
 </beans>
