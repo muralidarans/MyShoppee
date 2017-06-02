@@ -21,18 +21,18 @@ public class CustomerControllers {
 	@RequestMapping("/all/registrationform")
 	public String getRegistrationForm(Model model){
 		model.addAttribute("customer",new Customer());
-		return "registration";
+		return "Registration";
 	}
-	//@RequestMapping("all/register")
-	/*public String registerCustomer(@Valid @ModelAttribute(name="customer") Customer customer,BindingResult result,Model model){
+	@RequestMapping("all/register")
+	public String registerCustomer(@Valid @ModelAttribute(name="customer") Customer customer,BindingResult result,Model model){
 		if(result.hasErrors())
 			return "Registration"; //nonempty values..
 		List<Customer> customers= customerService.getCustomers();
-		String username=customer.getUsers().getUsername();
+		String username=customer.getUsers().getUserName();
 		String email=customer.getEmail();
 		for(Customer c:customers){
 			//  data in users table               input
-		   if(c.getUsers().getUsername().equals(username))
+		   if(c.getUsers().getUserName().equals(username))
 		   {
 			   model.addAttribute("duplicateUsername","Username already exists");
 			   return "Registration";
@@ -48,6 +48,6 @@ public class CustomerControllers {
 		customerService.saveCustomer(customer);
 		
 		return "login";
-	}*/
+	}
 	}
 

@@ -13,7 +13,7 @@
 <div class="container wrapper">
 <div class="container">
 <url:url value="/all/register" var="url"></url:url>
-<form:form  action="${url }" modelAttribute="customer" method="post">
+<form:form  action="${url}" modelAttribute="customer" method="post">
 <div class="boxed" style= "border:1px solid">
 <div class="form-group">
 <label for="id"></label>
@@ -56,8 +56,8 @@
 <div class="boxed" style= "border:1px solid">
 <div class="form-group">
 <label for="users.username">Enter username</label>
-<form:input path="users.username"></form:input>
-<form:errors path="users.username" cssStyle="color:red"></form:errors>
+<form:input path="users.userName"></form:input>
+<form:errors path="users.userName" cssStyle="color:red"></form:errors>
 <span style="color:red">${duplicateUsername }</span>
 </div>
 

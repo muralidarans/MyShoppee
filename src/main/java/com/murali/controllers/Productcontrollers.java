@@ -1,9 +1,9 @@
 package com.murali.controllers;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,6 +24,7 @@ import com.murali.model.Product;
 import com.murali.service.CategoryService;
 import com.murali.service.Productservice;
 
+@SessionAttributes("categorydetails")
 @Controller
 public class Productcontrollers {
 
@@ -54,9 +56,9 @@ public class Productcontrollers {
 
 @RequestMapping("/admin/product/addProduct")
 	public String addProduct(@Valid @ModelAttribute(name="productObj") Product product, BindingResult result){
-		/*if(result.hasErrors()){
+		if(result.hasErrors()){
 			return "addProduct";
-		}*/
+		}
 		System.out.println("After validation");
 		
 		MultipartFile image=product.getImage();
@@ -105,7 +107,16 @@ public String deleteProduct(@PathVariable int id){
 	return "redirect:/all/product/productlist";
 	
 }
-
+@RequestMapping("/all/product/productsByCategory")
+public String getProductsByCategory(@RequestParam(name="searchCondition") String searchCondition,
+		Model model,HttpSession session){
+	session.setAttribute("categories",categoryService.getAllCategories());
+	List<Product> products=productService.viewAllProducts();
+	//Assigning list of products to model attribute products
+	model.addAttribute("products",products);
+	model.addAttribute("searchCondition",searchCondition);
+	return "productlist";
+}
 
 
 }

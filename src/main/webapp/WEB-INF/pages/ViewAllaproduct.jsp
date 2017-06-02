@@ -32,7 +32,7 @@ $('.table').DataTable({
 <th>Image</th>
 <th>Product Name</th>
 <th>Price</th>
-<th>Category</th>
+<th>Manufacturer</th>
 <th colspan="3">Action</th>
 
 		<c:forEach items="${productList}" var="product" >

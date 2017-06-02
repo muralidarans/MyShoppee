@@ -1,5 +1,5 @@
 
-<html>
+<html lang="en">
 <head>
 <title>MyShoppee Home</title>
   <meta charset="utf-8">
@@ -19,9 +19,9 @@
 </head>
 
 <body>
-<%@ include file="WEB-INF/pages/header.jsp" %>
+<%@ include file="header.jsp" %>
 <!--<jsp:include page="WEB-INF/pages/header.html"></jsp:include> -->
-<h2>Welcome to MyShoppee World</h2>
+<center><h2 style="color:green">Welcome to MyShoppee World</h2></center>
 <img src="image/formal.jpg" alt="test" />
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -34,7 +34,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide home-image" src="image/formal.jpg" alt="first slide" >
+                    <img class="first-slide home-image" src="../image/formal.jpg" alt="first slide" >
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>WELCOME TO THE CAR STORE</h1>
@@ -43,7 +43,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide home-image" src="image/shirt.jpg" alt="Second slide">
+                    <img class="second-slide home-image" src="../image/shirt.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>The Car Store.</h1>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide home-image " src="image/sports.jpg" alt="Third slide">
+                    <img class="third-slide home-image " src="/image/sports.jpg" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>The Car You Love</h1>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                  <div class="item">
-                    <img class="forth-slide home-image " src="image/summer2.jpg" alt="forth slide">
+                    <img class="forth-slide home-image " src="/image/summer2.jpg" alt="forth slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Any car can be a "cool" car</h1>
