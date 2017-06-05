@@ -21,7 +21,7 @@
 <body>
 <%@ include file="header.jsp" %>
 <!--<jsp:include page="WEB-INF/pages/header.html"></jsp:include> -->
-<center><h2 style="color:green">Welcome to MyShoppee World</h2></center>
+<center><h2 style="color:orange">Welcome to MyShoppee World</h2></center>
 <img src="image/formal.jpg" alt="test" />
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -34,7 +34,7 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide home-image" src="../image/formal.jpg" alt="first slide" >
+                    <img class="first-slide home-image" src="./image/formal.jpg" alt="first slide" >
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>WELCOME TO THE CAR STORE</h1>
@@ -81,7 +81,7 @@
         </div><!-- /.carousel -->
 
 </div>
-
+<%@ include file="footer.jsp" %>
 
 </body>
 </html>

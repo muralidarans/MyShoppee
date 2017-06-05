@@ -15,37 +15,68 @@
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!-- jQuery library -->
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
+<!-- JQuery -->
+ <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 
-<!-- JQuery -->
-<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
-<script
-	src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-
-
+<style>
+.navbar {
+      margin-bottom: 0;
+      background-color: #850FFA;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  /*.navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #850FFA !important;
+      background-color: #fff !important;
+  }*/
+  .navbar-nav li a:link{
+  	  color: #fff !important;
+      background-color: transparent !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li a:active{
+      color: #850FFA !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      /*color: #fff !important;*/
+  }
+</style>
 
 </head>
-<body>
-	<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="#">MY SHOPPEE</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<url:url value="/home" var="homeUrl"></url:url>
-			<li class="active"><a href="${homeUrl}">HOME</a></li>
-			<url:url value="/Aboutus" var="url"></url:url>
-			<li><a href="${url }">ABOUT US</a></li>
-			<url:url value="/admin/product/productform" var="addUrl"></url:url>
+<body>                     
+      <nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="nav navbar-header">
+				<a class="navbar-brand" href="#">MY SHOPPEE</a></div>
+			
+		
+			<ul class="nav navbar-nav navbar-right">
+				<url:url value="/home" var="homeUrl"></url:url>
+				<li class="active"><a href="${homeUrl}">HOME</a></li>
+				<url:url value="/Aboutus" var="url"></url:url>
+					<li><a href="${url }">ABOUT US</a></li>
+				<url:url value="/admin/product/productform" var="addUrl"></url:url>
 			<li><a href="${addUrl}">ADD PRODUCT</a></li>
 			<url:url value="/all/product/productlist" var="viewUrl"></url:url>
 			<li><a href="${viewUrl}">VIEW ALL PRODUCTS</a></li>
@@ -67,9 +98,9 @@
 			<url:url value="/all/registrationform" var="url"></url:url>
 
 			<c:if test="${pageContext.request.userPrincipal.name==null }">
-				<li><a href="${url }">Register</a></li>
+				<li><a href="${url }">REGISTER</a></li>
 				<url:url value="/login" var="url"></url:url>
-				<li><a href="${url }">Sign in</a></li>
+				<li><a href="${url }">LOGIN</a></li>
 
 
 			</c:if>

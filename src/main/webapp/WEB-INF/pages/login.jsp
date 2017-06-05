@@ -9,13 +9,14 @@
 <body>
 <%@ include file="header.jsp" %>
 ENTER USERNAME AND PASSWORD <br>
-${error }
-${logout }
-${registrationSuccess }
+${error}
+${logout}
+${registrationSuccess}
 <form action="<c:url value="j_spring_security_check"></c:url>" method="post" >
 Enter username <input type="text" name="j_username"><br>
 Enter password <input type="text" name="j_password"><br>
 <input type="submit" value="submit">
 </form>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

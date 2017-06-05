@@ -26,6 +26,6 @@ Connect with Myshopee World !!!!</p>
 <h2>Myshopee World - Timeline</h2><br>
 <img src="WEB-INF/resourses/images/1.png">
 
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>

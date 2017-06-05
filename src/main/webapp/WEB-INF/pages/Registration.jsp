@@ -55,7 +55,7 @@
 <br>
 <div class="boxed" style= "border:1px solid">
 <div class="form-group">
-<label for="users.username">Enter username</label>
+<label for="users.userName">Enter username</label>
 <form:input path="users.userName"></form:input>
 <form:errors path="users.userName" cssStyle="color:red"></form:errors>
 <span style="color:red">${duplicateUsername }</span>
@@ -137,5 +137,6 @@
 </form:form></div>
 
 </div>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

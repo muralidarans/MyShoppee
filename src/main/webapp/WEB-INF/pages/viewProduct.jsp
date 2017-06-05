@@ -25,5 +25,6 @@ Unit In Stock :	${product.unitInStock}		<Br>
 <img src="${imageurl}" width="200" height="200">
 <url:url value="/all/product/productlist" var="url"></url:url>
 <a href="${url }">View All Products</a>
+<%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -77,7 +77,7 @@
 <input type="submit" value="addProduct">
 
 </form:form>
-
+<%@ include file="footer.jsp" %>
 </div>
 
 </div>

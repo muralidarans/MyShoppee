@@ -95,7 +95,7 @@ public ModelAndView getProductList(){
 public String viewProduct(@PathVariable int id,Model model){
 	Product product=productService.getProductById(id);
 	model.addAttribute("product",product);
-	String encodedImage="";
+	//String encodedImage="";
 	
 	return "viewProduct";
 }
@@ -113,9 +113,9 @@ public String getProductsByCategory(@RequestParam(name="searchCondition") String
 	session.setAttribute("categories",categoryService.getAllCategories());
 	List<Product> products=productService.viewAllProducts();
 	//Assigning list of products to model attribute products
-	model.addAttribute("products",products);
+	model.addAttribute("productList",products);
 	model.addAttribute("searchCondition",searchCondition);
-	return "productlist";
+	return "ViewAllaproduct";
 }
 
 
