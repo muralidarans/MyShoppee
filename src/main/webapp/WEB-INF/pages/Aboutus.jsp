@@ -24,7 +24,7 @@ Love fetching compliments?
 Connect with Myshopee World !!!!</p>
 <br>
 <h2>Myshopee World - Timeline</h2><br>
-<img src="WEB-INF/resourses/images/1.png">
+<img src="resources/images/1.png">
 
 <%@ include file="footer.jsp" %>
 </body>

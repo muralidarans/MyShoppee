@@ -2,6 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="url"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+ <%@ taglib prefix="security"	uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@ page isELIgnored="false"%>
 
@@ -76,8 +77,11 @@
 				<li class="active"><a href="${homeUrl}">HOME</a></li>
 				<url:url value="/Aboutus" var="url"></url:url>
 					<li><a href="${url }">ABOUT US</a></li>
+				
+    <security:authorize access="hasRole('ROLE_ADMIN')">
 				<url:url value="/admin/product/productform" var="addUrl"></url:url>
 			<li><a href="${addUrl}">ADD PRODUCT</a></li>
+			  </security:authorize>
 			<url:url value="/all/product/productlist" var="viewUrl"></url:url>
 			<li><a href="${viewUrl}">VIEW ALL PRODUCTS</a></li>
 			<li class="dropdown"><a href="" class="dropdown-toggle"

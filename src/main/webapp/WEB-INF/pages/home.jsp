@@ -34,38 +34,38 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img class="first-slide home-image" src="./image/formal.jpg" alt="first slide" >
+                    <img class="first-slide home-image" src="resources/images/formal.jpg" alt="first slide" >
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>WELCOME TO THE CAR STORE</h1>
-                            <p>Here You Can Browse And Buy Cars.Order Now For Your Amazing New Arrivals</p>
+                            <h1 style="color:black">NEW ARRIVALS</h1>
+                            <p>Here You Can Browse And Buy Some cool casuals</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="second-slide home-image" src="../image/shirt.jpg" alt="Second slide">
+                    <img class="second-slide home-image" src="resources/images/shirt.jpg" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>The Car Store.</h1>
+                           
                             <p>online shopping can make your life more easier</p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    <img class="third-slide home-image " src="/image/sports.jpg" alt="Third slide">
+                    <img class="third-slide home-image " src="resources/images/sports.jpg" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>The Car You Love</h1>
-                            <p>live Freely,Work Happily And Drive Safely!!</p>
+            
+                           <p style="color:yellow">BUY NOW AND ORDER NOW!!</p>
                         </div>
                     </div>
                 </div>
                  <div class="item">
-                    <img class="forth-slide home-image " src="/image/summer2.jpg" alt="forth slide">
+                    <img class="forth-slide home-image " src="resources/images/summer2.jpg" alt="forth slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Any car can be a "cool" car</h1>
-                            <p>your life,your car...you own it!!</p>
+                           
+                            <p>your shoe,your life...run the race!!</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,8 @@
         </div><!-- /.carousel -->
 
 </div>
-<%@ include file="footer.jsp" %>
+
 
 </body>
+<%@ include file="footer.jsp" %>
 </html>

@@ -53,18 +53,24 @@
 					<url:url value="viewProduct/${product.prodcutID}" var="url1"></url:url>
 
 					<td><a href="${url1}"><span
-							class="glyphicon glyphicon-info-sign"></span></a> <url:url
+							class="glyphicon glyphicon-info-sign"></span></a> 
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+							<url:url
 							value="/admin/product/editproduct/${product.prodcutID}"
 							var="url2"></url:url> <a href="${url2}"><span
-							class="glyphicon glyphicon-pencil"></span></a> <url:url
+							class="glyphicon glyphicon-pencil"></span></a> 
+							</security:authorize>
+						<security:authorize access="hasRole('ROLE_ADMIN')">	
+							<url:url
 							value="deleteproduct/${product.prodcutID}" var="value1"></url:url>
-						<a href="${value1}"><span class="glyphicon glyphicon-trash"></span></a></td>
+						<a href="${value1}"><span class="glyphicon glyphicon-trash"></span></a>
+						</security:authorize>
+						</td>
 				</tr>
 
 			</c:forEach>
 		</tbody>
 	</table>
-
-	<%@ include file="footer.jsp"%>
 </body>
+<%@ include file="footer.jsp"%>
 </html>
